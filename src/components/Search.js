@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
+import { Button } from '@material-ui/core';
+
+import useStyles from './Style';
 
 const Search = (props) => {
+  const classes = useStyles();
   const [searchValue, setSearchValue] = useState("");
 
   const handleSearchinputChange = (e) => {
@@ -20,8 +24,10 @@ const Search = (props) => {
   return (
     <form>
       <input type="text" value={searchValue} onChange={handleSearchinputChange} />
-      <input type="submit" value="検索" onClick={callSearchFunction} />
-      </form>
+      <Button variant="contained" size="small" color="primary" onClick={callSearchFunction} className={classes.margin}>
+        検索
+      </Button>
+    </form>
   )
 
 }

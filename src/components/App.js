@@ -10,7 +10,7 @@ import {
   SEARCH_MOVIES_FAILURE
 } from '../actions/index'
 
-const MOVIE_API_KEY = 'http://www.omdbapi.com/?i=XXXXX&apikey=XXXXX';
+const MOVIE_API_KEY = 'http://www.omdbapi.com/?i=tt3896198&apikey=XXXXX';
 
 function App() {
   const intialState = {
@@ -58,7 +58,7 @@ function App() {
 
   const { movies, errorMessage, loading } = state;
 
-  const movieaaa = loading && !errorMessage ? (<span>loading...</span>) : errorMessage ? (
+  const movieaaa = loading && !errorMessage ? (<span className="load">loading...</span>) : errorMessage ? (
     <div className="errorMessage">{errorMessage}</div>) : movies ? (
       movies.map((movie, index) => (
         <Movie key={`${index}-${movie.Title}`} movie={movie} />
